@@ -14,7 +14,7 @@
 [ascenseur.wav](https://github.com/user-attachments/files/26224052/ascenseur.wav)  
 
 
-## Carte du jeu
+## Cartes du jeu
 
 ## Schéma d'interactivité
 ![photo](img/schéma01.png) 

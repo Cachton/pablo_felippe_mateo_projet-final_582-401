@@ -9,4 +9,4 @@ Github du projet final de realité mixte
 ## Schéma d'interactivité
 
 <a href="https://stackoverflow.com/"><img src="RELATIVE_PATH_TO_IMAGE"></img></a>
-![photo](img/cyberdelia03.jpg) | ![photo](img/cyberdelia02.jpg) 
+![photo](img/schéma01.png) | ![photo](img/cyberdelia02.jpg) 

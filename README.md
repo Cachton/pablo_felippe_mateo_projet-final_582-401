@@ -7,3 +7,5 @@ Github du projet final de realité mixte
 ## Carte du jeu
 
 ## Schéma d'interactivité
+
+<a href="https://stackoverflow.com/"><img src="RELATIVE_PATH_TO_IMAGE"></img></a>

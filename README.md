@@ -15,7 +15,8 @@
 
 ## Cartes du jeu
 
-<img width="480" height="270" alt="carte_rdc_02" src="https://github.com/user-attachments/assets/63261fc6-dd73-4f21-88cc-4b44d5f87d78" />
+
+<img width="480" height="270" alt="carte_rdc_02" src="https://github.com/user-attachments/assets/1e916d33-788b-4f73-8b0f-e87b696e8cb4" />
 <img width="480" height="270" alt="carte_ss_02" src="https://github.com/user-attachments/assets/3ec4d5e5-06d4-4804-b67f-a9595d5877e3" />
 <img width="480" height="270" alt="premier_etage_vr_01" src="https://github.com/user-attachments/assets/951bc11c-d63b-4c87-b1fe-25aa7a035c09" />
 <img width="480" height="270" alt="deuxieme_etage_vr_01" src="https://github.com/user-attachments/assets/b5969563-0d1d-4fc0-ba6f-11ecdd7e6e67" />

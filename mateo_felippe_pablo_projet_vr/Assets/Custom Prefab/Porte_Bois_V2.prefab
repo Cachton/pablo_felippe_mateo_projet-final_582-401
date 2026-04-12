@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9010830048312714034}
   m_Layer: 0
-  m_Name: Porte_Bois
+  m_Name: Porte_Bois_V2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

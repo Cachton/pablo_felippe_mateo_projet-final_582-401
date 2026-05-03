@@ -65,13 +65,13 @@ AnimatorController:
   m_Name: grille_parent 1
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: OpenGrille
+  - m_Name: OpenElevator
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: CloseGrille
+  - m_Name: CloseElevator
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -151,7 +151,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: OpenGrille
+    m_ConditionEvent: OpenElevator
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1502668403184871198}
@@ -176,7 +176,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: CloseGrille
+    m_ConditionEvent: CloseElevator
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 4591180845120408350}

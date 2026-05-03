@@ -1,21 +1,50 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Video;
 
-
-  
-public class VRButton : MonoBehaviour
+public class DoorButton : MonoBehaviour
 {
+    public Animator porteGAnimator;
+    public Animator porteDAnimator;
+    public Animator grilleGAnimator;
+    public Animator grilleDAnimator;
 
-    void Start()
+    public string openTriggerName = "OpenElevator";
+
+    private bool hasOpened = false;
+
+    private void Update()
     {
-        
+        if (hasOpened) return;
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            if (Physics.Raycast(ray, out RaycastHit hit, 100f))
+            {
+                if (hit.collider.transform == transform || hit.collider.transform.IsChildOf(transform))
+                {
+                    OpenElevator();
+                }
+            }
+        }
     }
 
-    void Update()
+    public void OpenElevator()
     {
+        if (hasOpened) return;
 
+        hasOpened = true;
+
+        if (porteGAnimator != null)
+            porteGAnimator.SetTrigger(openTriggerName);
+
+        if (porteDAnimator != null)
+            porteDAnimator.SetTrigger(openTriggerName);
+
+        if (grilleGAnimator != null)
+            grilleGAnimator.SetTrigger(openTriggerName);
+
+        if (grilleDAnimator != null)
+            grilleDAnimator.SetTrigger(openTriggerName);
     }
-
 }

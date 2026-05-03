@@ -117,7 +117,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: CloseDoor
+    m_ConditionEvent: CloseElevator
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -7312586237586226843}
@@ -142,13 +142,13 @@ AnimatorController:
   m_Name: porte_parent_2
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: OpenDoor
+  - m_Name: OpenElevator
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: CloseDoor
+  - m_Name: CloseElevator
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -176,7 +176,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: OpenDoor
+    m_ConditionEvent: OpenElevator
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2627666846424166608}

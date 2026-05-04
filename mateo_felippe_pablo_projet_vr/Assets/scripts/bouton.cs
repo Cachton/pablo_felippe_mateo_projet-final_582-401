@@ -47,4 +47,25 @@ public class DoorButton : MonoBehaviour
         if (grilleDAnimator != null)
             grilleDAnimator.SetTrigger(openTriggerName);
     }
+
+    public class BoutonSon : MonoBehaviour
+    {
+        public AudioSource audioSource;
+
+        void Start()
+        {
+            if (audioSource == null)
+            {
+                audioSource = GetComponent<AudioSource>();
+            }
+        }
+
+        public void JouerSon()
+        {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
+        }
+    }
 }

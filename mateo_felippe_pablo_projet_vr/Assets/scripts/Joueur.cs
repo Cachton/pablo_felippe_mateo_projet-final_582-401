@@ -24,7 +24,19 @@ public class Joueur : MonoBehaviour
     {
         if (other.CompareTag("jumpscare_01"))
         {
+            // 🎬 Animation TV
             teleAnimator.Play("animation_jumpscare_tv_01");
+
+            // 🔊 Son de la zone
+            AudioSource audio = other.GetComponent<AudioSource>();
+            if (audio != null)
+            {
+                audio.Play();
+            }
+            else
+            {
+                Debug.LogWarning("Aucun AudioSource sur la zone !");
+            }
         }
     }
 }

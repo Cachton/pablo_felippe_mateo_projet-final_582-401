@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CloseElevatorButton : MonoBehaviour
 {
@@ -10,6 +12,8 @@ public class CloseElevatorButton : MonoBehaviour
     public AudioSource audioSource;
 
     public string closeTriggerName = "CloseElevator";
+    public string sceneToLoad = "premier_etage_pp";
+    public float delayBeforeSceneLoad = 3f;
 
     private bool hasClosed = false;
 
@@ -33,10 +37,6 @@ public class CloseElevatorButton : MonoBehaviour
         {
             audioSource.Play();
         }
-        else
-        {
-            Debug.LogWarning("No AudioSource assigned or found on this button.");
-        }
 
         if (porteGAnimator != null)
             porteGAnimator.SetTrigger(closeTriggerName);
@@ -49,6 +49,15 @@ public class CloseElevatorButton : MonoBehaviour
 
         if (grilleDAnimator != null)
             grilleDAnimator.SetTrigger(closeTriggerName);
+
+        StartCoroutine(LoadSceneAfterDelay());
+    }
+
+    private IEnumerator LoadSceneAfterDelay()
+    {
+        yield return new WaitForSeconds(delayBeforeSceneLoad);
+
+        SceneManager.LoadScene(sceneToLoad);
     }
 
     private void Update()

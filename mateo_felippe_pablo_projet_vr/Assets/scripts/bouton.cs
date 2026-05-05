@@ -7,9 +7,19 @@ public class DoorButton : MonoBehaviour
     public Animator grilleGAnimator;
     public Animator grilleDAnimator;
 
+    public AudioSource audioSource;
+
     public string openTriggerName = "OpenElevator";
 
     private bool hasOpened = false;
+
+    private void Start()
+    {
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
+    }
 
     private void Update()
     {
@@ -35,6 +45,11 @@ public class DoorButton : MonoBehaviour
 
         hasOpened = true;
 
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
+
         if (porteGAnimator != null)
             porteGAnimator.SetTrigger(openTriggerName);
 
@@ -46,26 +61,5 @@ public class DoorButton : MonoBehaviour
 
         if (grilleDAnimator != null)
             grilleDAnimator.SetTrigger(openTriggerName);
-    }
-
-    public class BoutonSon : MonoBehaviour
-    {
-        public AudioSource audioSource;
-
-        void Start()
-        {
-            if (audioSource == null)
-            {
-                audioSource = GetComponent<AudioSource>();
-            }
-        }
-
-        public void JouerSon()
-        {
-            if (!audioSource.isPlaying)
-            {
-                audioSource.Play();
-            }
-        }
     }
 }

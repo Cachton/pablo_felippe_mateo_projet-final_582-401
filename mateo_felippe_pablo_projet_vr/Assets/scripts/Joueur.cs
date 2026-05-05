@@ -8,22 +8,23 @@ public class Joueur : MonoBehaviour
     public GameObject bouton;
     public GameObject Tele;
 
+    private Animator teleAnimator;
+
     void Start()
     {
-        
+        teleAnimator = Tele.GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void OnTriggerEnter(Collider other)
     {
-    if (other.CompareTag("jumpscare_01"))
+        if (other.CompareTag("jumpscare_01"))
         {
-            Tele.Play("tele_jumpscare");
+            teleAnimator.Play("tele_jumpscare");
         }
     }
 }

@@ -7,9 +7,19 @@ public class CloseElevatorButton : MonoBehaviour
     public Animator grilleGAnimator;
     public Animator grilleDAnimator;
 
+    public AudioSource audioSource;
+
     public string closeTriggerName = "CloseElevator";
 
     private bool hasClosed = false;
+
+    private void Start()
+    {
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
+    }
 
     public void CloseElevator()
     {
@@ -18,6 +28,15 @@ public class CloseElevatorButton : MonoBehaviour
         if (hasClosed) return;
 
         hasClosed = true;
+
+        if (audioSource != null)
+        {
+            audioSource.Play();
+        }
+        else
+        {
+            Debug.LogWarning("No AudioSource assigned or found on this button.");
+        }
 
         if (porteGAnimator != null)
             porteGAnimator.SetTrigger(closeTriggerName);

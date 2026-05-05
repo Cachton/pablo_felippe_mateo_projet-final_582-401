@@ -382,5 +382,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToLoad: main_scene
-  spawnPointToUse: SS_Spawn_Point
+  spawnPointToUse: SS_Spawnpoint
   loadingScreenUI: {fileID: 0}

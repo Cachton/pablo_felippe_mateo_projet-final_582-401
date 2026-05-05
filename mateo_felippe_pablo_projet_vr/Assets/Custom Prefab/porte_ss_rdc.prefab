@@ -381,3 +381,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac508a0589face54d861d0139af0cd63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToLoad: main_scene
+  spawnPointToUse: SS_Spawn_Point
+  loadingScreenUI: {fileID: 0}

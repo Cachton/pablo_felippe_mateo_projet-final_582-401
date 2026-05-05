@@ -24,7 +24,7 @@ public class Joueur : MonoBehaviour
     {
         if (other.CompareTag("jumpscare_01"))
         {
-            teleAnimator.Play("tele_jumpscare");
+            teleAnimator.Play("animation_jumpscare_tv_01");
         }
     }
 }

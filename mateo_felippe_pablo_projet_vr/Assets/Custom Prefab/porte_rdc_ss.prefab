@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8417298016412577166}
   m_Layer: 0
-  m_Name: porte_soussol_v1
+  m_Name: porte_rdc_ss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -479,7 +479,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4292878851473948068}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c8bf0db57a94ad43bb9566aab5d2ec3, type: 3}
+  m_Script: {fileID: 11500000, guid: 18a486d1944341c42a3589651517fc71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   doorLock: {fileID: 5712515562208850551}

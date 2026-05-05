@@ -24169,6 +24169,57 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 859850569}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &340531039
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 340531041}
+  - component: {fileID: 340531040}
+  m_Layer: 0
+  m_Name: ElevatorAutoSequence
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &340531040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340531039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8806771daa36634789d1527c687ecfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  porteGAnimator: {fileID: 1408536990}
+  porteDAnimator: {fileID: 236020343}
+  grilleGAnimator: {fileID: 546149019}
+  grilleDAnimator: {fileID: 1781985752}
+  openTriggerName: OpenElevator
+  closeTriggerName: CloseElevator
+  delayBeforeClose: 45
+--- !u!4 &340531041
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340531039}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -20.59, y: 1.3614397, z: 30.364365}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &341859174
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -69331,6 +69382,8 @@ MonoBehaviour:
   grilleDAnimator: {fileID: 1781985752}
   audioSource: {fileID: 0}
   closeTriggerName: CloseElevator
+  sceneToLoad: premier_etage_pp
+  delayBeforeSceneLoad: 3
 --- !u!114 &958065810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105621,7 +105674,7 @@ PrefabInstance:
     - target: {fileID: 601710209917727619, guid: c0a2bae61d5620d48b56a361a085b54a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.33
+      value: -22.12236
       objectReference: {fileID: 0}
     - target: {fileID: 601710209917727619, guid: c0a2bae61d5620d48b56a361a085b54a,
         type: 3}
@@ -105631,27 +105684,27 @@ PrefabInstance:
     - target: {fileID: 601710209917727619, guid: c0a2bae61d5620d48b56a361a085b54a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 32.48
+      value: 29.936583
       objectReference: {fileID: 0}
     - target: {fileID: 601710209917727619, guid: c0a2bae61d5620d48b56a361a085b54a,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 0.68430924
       objectReference: {fileID: 0}
     - target: {fileID: 601710209917727619, guid: c0a2bae61d5620d48b56a361a085b54a,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 601710209917727619, guid: c0a2bae61d5620d48b56a361a085b54a,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0.72919196
       objectReference: {fileID: 0}
     - target: {fileID: 601710209917727619, guid: c0a2bae61d5620d48b56a361a085b54a,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 601710209917727619, guid: c0a2bae61d5620d48b56a361a085b54a,
         type: 3}
@@ -105661,7 +105714,7 @@ PrefabInstance:
     - target: {fileID: 601710209917727619, guid: c0a2bae61d5620d48b56a361a085b54a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 93.637
       objectReference: {fileID: 0}
     - target: {fileID: 601710209917727619, guid: c0a2bae61d5620d48b56a361a085b54a,
         type: 3}
@@ -165074,3 +165127,4 @@ SceneRoots:
   - {fileID: 1751581890}
   - {fileID: 958065814}
   - {fileID: 1250656471}
+  - {fileID: 340531041}

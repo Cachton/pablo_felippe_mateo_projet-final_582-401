@@ -11,8 +11,6 @@ public class DoorButton : MonoBehaviour
 
     public string openTriggerName = "OpenElevator";
 
-    private bool hasOpened = false;
-
     private void Start()
     {
         if (audioSource == null)
@@ -23,11 +21,17 @@ public class DoorButton : MonoBehaviour
 
     private void Update()
     {
-        if (hasOpened) return;
-
         if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Camera cam = Camera.main;
+
+            if (cam == null)
+            {
+                Debug.LogWarning("No MainCamera found.");
+                return;
+            }
+
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray, out RaycastHit hit, 100f))
             {
@@ -41,10 +45,6 @@ public class DoorButton : MonoBehaviour
 
     public void OpenElevator()
     {
-        if (hasOpened) return;
-
-        hasOpened = true;
-
         if (audioSource != null)
         {
             audioSource.Play();

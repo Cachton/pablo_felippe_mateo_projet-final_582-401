@@ -24204,7 +24204,7 @@ MonoBehaviour:
   grilleDAnimator: {fileID: 1781985752}
   openTriggerName: OpenElevator
   closeTriggerName: CloseElevator
-  delayBeforeClose: 45
+  delayBeforeClose: 20
 --- !u!4 &340531041
 Transform:
   m_ObjectHideFlags: 0
@@ -69382,7 +69382,8 @@ MonoBehaviour:
   grilleDAnimator: {fileID: 1781985752}
   audioSource: {fileID: 0}
   closeTriggerName: CloseElevator
-  sceneToLoad: premier_etage_pp
+  sceneToLoad: main_scene
+  spawnPointToUse: Elevator
   delayBeforeSceneLoad: 3
 --- !u!114 &958065810
 MonoBehaviour:

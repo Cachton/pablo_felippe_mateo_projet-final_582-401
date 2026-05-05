@@ -12,10 +12,13 @@ public class CloseElevatorButton : MonoBehaviour
     public AudioSource audioSource;
 
     public string closeTriggerName = "CloseElevator";
+
     public string sceneToLoad = "premier_etage_pp";
+    public string spawnPointToUse = "";
+
     public float delayBeforeSceneLoad = 3f;
 
-    private bool hasClosed = false;
+    private bool isChangingScene = false;
 
     private void Start()
     {
@@ -27,11 +30,9 @@ public class CloseElevatorButton : MonoBehaviour
 
     public void CloseElevator()
     {
-        Debug.Log("INSIDE BUTTON PRESSED - CloseElevator called");
+        if (isChangingScene) return;
 
-        if (hasClosed) return;
-
-        hasClosed = true;
+        isChangingScene = true;
 
         if (audioSource != null)
         {
@@ -57,12 +58,14 @@ public class CloseElevatorButton : MonoBehaviour
     {
         yield return new WaitForSeconds(delayBeforeSceneLoad);
 
+        SpawnManager.spawnPointName = spawnPointToUse;
+
         SceneManager.LoadScene(sceneToLoad);
     }
 
     private void Update()
     {
-        if (hasClosed) return;
+        if (isChangingScene) return;
 
         if (Input.GetMouseButtonDown(0))
         {

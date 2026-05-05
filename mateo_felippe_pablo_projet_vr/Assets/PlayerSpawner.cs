@@ -17,7 +17,5 @@ public class PlayerSpawner : MonoBehaviour
             transform.position = defaultSpawnPoint.position;
             transform.rotation = defaultSpawnPoint.rotation;
         }
-
-        SpawnManager.spawnPointName = "";
     }
 }

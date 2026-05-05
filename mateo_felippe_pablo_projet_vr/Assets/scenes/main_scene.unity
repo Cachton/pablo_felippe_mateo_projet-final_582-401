@@ -15189,6 +15189,60 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 731968378}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &734303627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 734303629}
+  - component: {fileID: 734303630}
+  m_Layer: 0
+  m_Name: ElevatorAutoSequence
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &734303629
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734303627}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -15.75597, y: 1.3480088, z: 10.618788}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &734303630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734303627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5ee786282d8e914fa356529bb64f81c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  porteGAnimator: {fileID: 1639136484}
+  porteDAnimator: {fileID: 1596716607}
+  grilleGAnimator: {fileID: 765314610}
+  grilleDAnimator: {fileID: 751058750}
+  openAudioSource: {fileID: 0}
+  closeAudioSource: {fileID: 0}
+  openTriggerName: OpenElevator
+  closeTriggerName: CloseElevator
+  delayBeforeClose: 20
+  onlyPlayWhenSpawnedFromElevator: 1
 --- !u!1001 &738083809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25324,7 +25378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b320e30413d598c4daa04cedfbfc583b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultSpawnPoint: {fileID: 0}
+  defaultSpawnPoint: {fileID: 1331488146}
   elevatorSpawnPoint: {fileID: 1527773759}
 --- !u!1001 &1166412128
 PrefabInstance:
@@ -33863,8 +33917,8 @@ Transform:
   m_GameObject: {fileID: 1527773758}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.82, y: 0.25, z: 9.74}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -13.82, y: 0.47, z: 7.42}
+  m_LocalScale: {x: 0.33076775, y: 0.33076775, z: 0.33076775}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -48050,3 +48104,4 @@ SceneRoots:
   - {fileID: 1331488146}
   - {fileID: 1527773759}
   - {fileID: 1501898718}
+  - {fileID: 734303629}

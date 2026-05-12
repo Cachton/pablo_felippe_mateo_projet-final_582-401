@@ -1,10 +1,10 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class RadioToggleOff : MonoBehaviour
 {
     public AudioSource radioAudio;
-
-    private bool isOff = false;
+    public XRBaseInteractable interactable;
 
     private void Start()
     {
@@ -13,49 +13,54 @@ public class RadioToggleOff : MonoBehaviour
             radioAudio = GetComponent<AudioSource>();
         }
 
+        if (interactable == null)
+        {
+            interactable = GetComponent<XRBaseInteractable>();
+        }
+
         if (radioAudio != null)
         {
-            radioAudio.loop = true;
-            radioAudio.spatialBlend = 1f; // 3D sound
-            radioAudio.Play();
+            radioAudio.loop = false; // plays only once
+            radioAudio.playOnAwake = true;
+        }
+
+        if (interactable != null)
+        {
+            interactable.selectEntered.AddListener(OnRadioClicked);
+        }
+        else
+        {
+            Debug.LogWarning("No XRBaseInteractable found on radio.");
         }
     }
 
-    private void Update()
+    private void OnDestroy()
     {
-        if (isOff) return;
-
-        if (Input.GetMouseButtonDown(0))
+        if (interactable != null)
         {
-            Camera cam = Camera.main;
-
-            if (cam == null)
-            {
-                Debug.LogWarning("No MainCamera found.");
-                return;
-            }
-
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out RaycastHit hit, 100f))
-            {
-                if (hit.collider.transform == transform || hit.collider.transform.IsChildOf(transform))
-                {
-                    TurnOffRadio();
-                }
-            }
+            interactable.selectEntered.RemoveListener(OnRadioClicked);
         }
     }
 
-    private void TurnOffRadio()
+    private void OnRadioClicked(SelectEnterEventArgs args)
     {
-        isOff = true;
+        ToggleRadio();
+    }
 
-        if (radioAudio != null)
+    private void ToggleRadio()
+    {
+        if (radioAudio == null) return;
+
+        if (radioAudio.isPlaying)
         {
             radioAudio.Stop();
+            Debug.Log("Radio stopped.");
         }
-
-        Debug.Log("Radio turned off.");
+        else
+        {
+            radioAudio.time = 0f;
+            radioAudio.Play();
+            Debug.Log("Radio started again.");
+        }
     }
 }

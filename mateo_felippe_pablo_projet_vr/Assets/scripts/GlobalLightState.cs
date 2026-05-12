@@ -5,4 +5,6 @@ using UnityEngine;
 public static class GlobalLightState
 {
     public static bool lightsAreOn = true;
+
+    public static bool lightsOffZoneAlreadyTriggered = false;
 }

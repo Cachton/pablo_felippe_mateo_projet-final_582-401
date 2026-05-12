@@ -108026,6 +108026,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trashCount: 0
   limit: 5
+  throwSound: {fileID: 8300000, guid: 144db16471563bc49a39cf4236edb48f, type: 3}
 --- !u!65 &1690689490
 BoxCollider:
   m_ObjectHideFlags: 0

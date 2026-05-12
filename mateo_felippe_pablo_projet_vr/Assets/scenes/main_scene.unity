@@ -48053,11 +48053,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: da873ab0b3f94ca4d98fcaf208dc44b4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: fb5d4855906e80c46be0c1c412967962, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.086
+  m_Volume: 0.403
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -48152,6 +48152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radioAudio: {fileID: 0}
+  interactable: {fileID: 0}
 --- !u!1001 &1544979325736730431
 PrefabInstance:
   m_ObjectHideFlags: 0

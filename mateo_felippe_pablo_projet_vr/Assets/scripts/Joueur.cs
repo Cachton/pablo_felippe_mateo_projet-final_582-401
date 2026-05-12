@@ -10,6 +10,8 @@ public class Joueur : MonoBehaviour
 
     private Animator teleAnimator;
 
+    private bool jumpscarePlayed = false;
+
     void Start()
     {
         teleAnimator = Tele.GetComponent<Animator>();
@@ -22,8 +24,10 @@ public class Joueur : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("jumpscare_01"))
+        if (other.CompareTag("jumpscare_01") && !jumpscarePlayed)
         {
+            jumpscarePlayed = true;
+
             // 🎬 Animation TV
             teleAnimator.Play("animation_jumpscare_tv_01");
 

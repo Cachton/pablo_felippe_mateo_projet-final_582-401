@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7856765754471414455}
   - component: {fileID: 567371847564444769}
   - component: {fileID: 6788959045257207419}
+  - component: {fileID: -4686385360075341045}
   m_Layer: 0
   m_Name: poubelle
   m_TagString: Trash
@@ -235,6 +236,19 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &-4686385360075341045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169852917288510111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50d46f93e002565488f5fc7d83725a67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupSound: {fileID: 0}
 --- !u!1 &5022461473705757442
 GameObject:
   m_ObjectHideFlags: 0

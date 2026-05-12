@@ -6,6 +6,9 @@ public class TrashZone : MonoBehaviour
     public int trashCount = 0;
     public int limit = 5;
 
+    // Son quand on jette la poubelle
+    public AudioClip throwSound;
+
     // Liste de tous les sacs actifs
     public static List<GameObject> allTrash = new List<GameObject>();
 
@@ -13,7 +16,13 @@ public class TrashZone : MonoBehaviour
     {
         if (other.CompareTag("Trash"))
         {
-            // Ajouter si pas déjà listé
+            // Joue le son quand la poubelle est jetée
+            if (throwSound != null)
+            {
+                AudioSource.PlayClipAtPoint(throwSound, other.transform.position);
+            }
+
+            // Ajouter si pas déjà dans la liste
             if (!allTrash.Contains(other.gameObject))
             {
                 allTrash.Add(other.gameObject);
@@ -21,8 +30,10 @@ public class TrashZone : MonoBehaviour
 
             trashCount++;
 
+            // Supprime la poubelle
             Destroy(other.gameObject);
 
+            // Reset si limite atteinte
             if (trashCount >= limit)
             {
                 ClearAllTrash();

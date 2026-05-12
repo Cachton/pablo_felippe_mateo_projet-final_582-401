@@ -3,15 +3,19 @@ using UnityEngine;
 public class GeneratorSystem : MonoBehaviour
 {
     public int requiredKeys = 3;
-    public GeneratorLever lever;
+    public GeneratorPowerButton powerButton;
 
     private int insertedKeys = 0;
 
     private void Start()
     {
-        if (lever != null)
+        if (powerButton != null)
         {
-            lever.SetLeverUnlocked(false);
+            powerButton.SetButtonUnlocked(false);
+        }
+        else
+        {
+            Debug.LogWarning("No power button assigned to GeneratorSystem.");
         }
     }
 
@@ -23,17 +27,17 @@ public class GeneratorSystem : MonoBehaviour
 
         if (insertedKeys >= requiredKeys)
         {
-            UnlockLever();
+            UnlockButton();
         }
     }
 
-    private void UnlockLever()
+    private void UnlockButton()
     {
-        Debug.Log("Generator complete. Lever unlocked.");
+        Debug.Log("Generator complete. Power button unlocked.");
 
-        if (lever != null)
+        if (powerButton != null)
         {
-            lever.SetLeverUnlocked(true);
+            powerButton.SetButtonUnlocked(true);
         }
     }
 }

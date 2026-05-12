@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class GeneratorKey : MonoBehaviour
 {
@@ -12,25 +13,31 @@ public class GeneratorKey : MonoBehaviour
 
         isPlaced = true;
 
-        // Move key to the exact slot position
-        transform.position = slotPoint.position;
-        transform.rotation = slotPoint.rotation;
+        XRGrabInteractable grab = GetComponent<XRGrabInteractable>();
+        if (grab != null)
+        {
+            grab.enabled = false;
+        }
 
-        // Lock it there
         Rigidbody rb = GetComponent<Rigidbody>();
         if (rb != null)
         {
-            rb.isKinematic = true;
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
             rb.useGravity = false;
+            rb.isKinematic = true;
         }
 
-        Collider col = GetComponent<Collider>();
-        if (col != null)
+        Collider[] colliders = GetComponentsInChildren<Collider>();
+        foreach (Collider col in colliders)
         {
             col.enabled = false;
         }
 
-        // Parent it to the slot so it stays attached
         transform.SetParent(slotPoint);
+        transform.position = slotPoint.position;
+        transform.rotation = slotPoint.rotation;
+
+        Debug.Log(keyID + " locked into place.");
     }
 }
